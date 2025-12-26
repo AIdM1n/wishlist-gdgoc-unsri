@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+    <div>
+        <h1>Wishlist</h1>
+        <p>Kelola daftar keinginan Anda</p>
+    </div>
+    <button id="themeToggle">🌙</button>
+</header>
+
+<main>
+    <section class="stats">
+        <div>Total: <span id="totalCount">0</span></div>
+        <div>Sudah Dibeli: <span id="doneCount">0</span></div>
+    </section>
+
+    <section class="input-section">
+        <input type="text" id="itemInput" placeholder="Tambah barang...">
+        <button onclick="addItem()">Tambah</button>
+    </section>
+
+    <ul id="wishlist"></ul>
+    <p id="emptyState">Belum ada item wishlist.</p>
+</main>
+
+<footer>
+    <p>© 2025 Kgs Abdul Fatah Revaldo</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

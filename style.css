@@ -1,1 +1,125 @@
+:root{
+  --text-main:#0f172a;
+  --text-muted:#475569;
+  --text-card:#111827;
 
+  --primary:#2563eb;
+  --danger:#dc2626;
+}
+
+body.dark{
+  --text-main:#f8fafc;
+  --text-muted:#cbd5e1;
+  --text-card:#ffffff;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  color:var(--text-main);
+  background:linear-gradient(135deg,#c7d2fe,#e0f2fe,#fce7f3);
+  min-height:100vh;
+  transition:.3s;
+}
+
+body.dark{
+  background:linear-gradient(135deg,#020617,#1e293b,#020617);
+}
+
+/* HEADER */
+header{
+  background:rgba(0,0,0,.35);
+  padding:1rem 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{margin:0;color:#fff}
+header p{margin:0;color:var(--text-muted)}
+header button{
+  background:none;border:none;cursor:pointer;
+  font-size:1.4rem;color:var(--text-muted)
+}
+
+/* MAIN */
+main{max-width:650px;margin:auto;padding:1.5rem}
+.stats{
+  display:flex;justify-content:space-between;
+  color:var(--text-muted);font-weight:600;margin-bottom:1rem
+}
+.input-section{display:flex;gap:.5rem;margin-bottom:1rem}
+input{
+  flex:1;padding:.7rem;border-radius:8px;border:none;outline:none;
+  color:var(--text-main)
+}
+button{
+  padding:.7rem 1rem;border-radius:8px;border:none;
+  background:var(--primary);color:#fff;cursor:pointer
+}
+
+/* LIST */
+ul{list-style:none;padding:0}
+
+/* CARD (SOLID BG + TEKS JELAS) */
+li{
+  padding:.9rem;margin-bottom:.7rem;border-radius:14px;
+  display:flex;align-items:center;gap:.6rem;
+  background:#fff; color:var(--text-card);
+  animation:fadeIn .25s ease
+}
+
+/* WARNA-WARNI */
+/* CARD WARNA GELAP DOMINAN */
+li:nth-child(4n+1){ background:#1e40af; } /* biru gelap */
+li:nth-child(4n+2){ background:#065f46; } /* hijau gelap */
+li:nth-child(4n+3){ background:#7c2d12; } /* coklat gelap */
+li:nth-child(4n+4){ background:#581c87; } /* ungu gelap */
+
+li.done{opacity:.6;text-decoration:line-through}
+
+li span{
+  flex:1;font-weight:600;outline:none;color:inherit
+}
+
+.actions button{
+  background:rgba(0,0,0,.15);color:var(--text-card);
+  padding:.4rem .6rem
+}
+.actions .delete{background:var(--danger);color:#fff}
+
+/* EMPTY & FOOTER */
+#emptyState{text-align:center;color:var(--text-muted);margin-top:1rem}
+footer{text-align:center;padding:1rem;color:var(--text-muted)}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(4px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* INPUT CARD (TEMPAT NGETIK) */
+.input-section {
+  background: #ffffff;
+  padding: 0.8rem;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* DARK MODE INPUT CARD */
+body.dark .input-section {
+  background: #1e293b;
+}
+
+/* INPUT FIELD */
+.input-section input {
+  background: transparent;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* PLACEHOLDER */
+.input-section input::placeholder {
+  color: var(--text-muted);
+}
